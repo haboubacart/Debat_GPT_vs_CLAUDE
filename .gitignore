@@ -1,0 +1,12 @@
+__pycache__/
+*.so
+*.db
+.cache
+instance/
+.webassets-cache
+.scrapy
+docs/_build/
+.pybuilder/
+target/
+.ipynb_checkpoints
+*.env
