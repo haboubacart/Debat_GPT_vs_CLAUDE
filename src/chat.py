@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-gpt_llm_model = ChatOpenAI(api_key= os.getenv("OPENAI_API_KEY"), model="gpt-4o", temperature=0.3)
+gpt_llm_model = ChatOpenAI(api_key= os.getenv("OPENAI_API_KEY"), model="gpt-4o", temperature=1)
 claude_llm_model = ChatAnthropic(model='claude-3-haiku-20240307', temperature=1)
 
-def limit_to_k_last_memory(memory_history, k=5):
+def limit_to_k_last_memory(memory_history, k=8):
     stored_messages = memory_history.messages
     if len(stored_messages) > k:
         memory_history.clear()

@@ -10,3 +10,4 @@ docs/_build/
 target/
 .ipynb_checkpoints
 *.env
+/post.txt

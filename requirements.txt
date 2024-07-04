@@ -1,0 +1,8 @@
+langchain==0.2.4
+langchain_community==0.2.4
+langchain_huggingface==0.0.3
+langchain_openai==0.1.8
+langchain-anthropic==0.1.17
+streamlit==1.36.0
+streamlit-chat==0.1.1
+python-dotenv==1.0.1

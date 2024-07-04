@@ -4,7 +4,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from src.chat import call_llm, gpt_llm_model, claude_llm_model
 from src.prompt import get_general_promt
 
-st.set_page_config(page_title="Chatbot Interface", page_icon="😊")
+st.set_page_config(page_title="Débat d'IA")
 with open('src/static/styles.css') as f:
     css = f.read()
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
@@ -42,7 +42,7 @@ def display_message(message, is_user=True):
 # User input form for debate topic
 debate_topic_input = st.text_input("Entrez le sujet de débat:", key="debate_topic_input")
 
-if st.button("Commencer la conversation"):
+if st.button("Lancer le débat"):
     
     debate_topic = debate_topic_input.strip()
     if debate_topic:
@@ -56,7 +56,7 @@ if st.button("Commencer la conversation"):
         chat_container = st.container()
         chat_container.markdown('<div class="chat-container">', unsafe_allow_html=True)
 
-        st.session_state.chat_history_gpt.add_user_message(st.session_state.debate_topic) 
+        st.session_state.chat_history_gpt.add_user_message(f"Sujet de débat : {st.session_state.debate_topic}.") 
 
         start_time = time.time()
         num_messages = 0 
@@ -73,7 +73,6 @@ if st.button("Commencer la conversation"):
             st.session_state.chat_history_gpt.add_ai_message(chatbot1_message)
             
             chatbot1_message_display = (
-                                f"<div >"
                                 f"<strong>GPT</strong><br>{chatbot1_message}"
                                 "</div>"
                                 )
@@ -83,7 +82,7 @@ if st.button("Commencer la conversation"):
             st.session_state.chat_history_claude.add_user_message(chatbot1_message)
             chatbot2_message = call_llm(st.session_state.claude_llm_model, st.session_state.systeme_prompt , st.session_state.chat_history_claude)
             st.session_state.chat_history_claude.add_ai_message(chatbot2_message) 
-            time.sleep(5)  
+            time.sleep(15)  
 
             chatbot2_message_dispalay = (
                                 f"<div >"
@@ -92,7 +91,7 @@ if st.button("Commencer la conversation"):
                                 )
             display_message(chatbot2_message_dispalay, False)
             
-            time.sleep(5)  
+            time.sleep(15)  
             
             num_messages += 1
             
