@@ -19,11 +19,11 @@ Le projet est structuré de la manière suivante :
 ## Comment Utiliser le Projet
 Pour lancer l'application  :
 
-1. Installez les dépendances listées dans `requirements.txt` :
+1. Installez les dépendances listées dans "requirements.txt" :
     ```sh
     pip install -r ./requirements.txt
     ```
 2. Lancer l'app
     ```sh
         streamlit run app.py 
-        ```
+    ```
