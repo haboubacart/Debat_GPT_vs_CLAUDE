@@ -1,6 +1,6 @@
 ## Contexte du projet
 Vous souhaitez voir deux IA discuter entre elles, debattre sur un sujet de façon vive !!!
-Ce projet est une app streamlit qui permet de faire débattre sur un sujet fourni par l'utilisateur deux des modèles génératifs les plus puissants à date : GPT-4o et claude-3-haiku...
+Ce projet est une app streamlit qui permet de faire débattre sur un sujet fourni par l'utilisateur deux des modèles génératifs les plus puissants à date : GPT-4o et claude-3.5-sonnet...
 Les échanges se font avec retention en mémoire de la discussion, sur un viveau de profondre personnalisable dans le code de façon à maintenir le contexte pour chacun des "antagonistes" afin d'avoir des réponses encore plus cohérentes et maitrisées.
 
 ## Technologies Utilisées
@@ -27,3 +27,5 @@ Pour lancer l'application  :
     ```sh
         streamlit run app.py 
     ```
+## Exemple de débat
+![Description de l'image](src/static/exemple_debat.png)
